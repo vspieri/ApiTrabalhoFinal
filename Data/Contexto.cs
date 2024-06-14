@@ -11,10 +11,14 @@ namespace Api.Data
         }
 
         public DbSet<UsersModel> User { get; set; }
+        public DbSet<LoginModel> Login { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsersMap());
+            modelBuilder.ApplyConfiguration(new LoginMap());
+
             base.OnModelCreating(modelBuilder);
         }
 
