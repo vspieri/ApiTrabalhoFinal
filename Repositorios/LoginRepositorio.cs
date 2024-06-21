@@ -23,6 +23,10 @@ namespace Api.Repositorios
         {
             return await _dbContext.Login.FirstOrDefaultAsync(x => x.LoginId == id);
         }
+        public async Task<LoginModel> Login(LoginModel login)
+        {
+            return await _dbContext.Login.FirstOrDefaultAsync(x => x.LoginNome == login.LoginNome && x.LoginSenha == login.LoginSenha);
+        }
 
         public async Task<LoginModel> InsertLogin(LoginModel login)
         {

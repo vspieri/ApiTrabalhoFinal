@@ -30,6 +30,13 @@ namespace Api.Controllers
             return Ok(login);
         }
 
+        [HttpPost("Login")]
+        public async Task<ActionResult<LoginModel>> Login([FromBody] LoginModel LoginModel)
+        {
+            LoginModel login = await _LoginRepositorio.Login(LoginModel);
+            return Ok(login);
+        }
+
         [HttpPost("CreateUser")]
         public async Task<ActionResult<LoginModel>> InsertLogin([FromBody] LoginModel LoginModel)
         {

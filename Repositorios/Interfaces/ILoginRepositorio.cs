@@ -10,6 +10,8 @@ namespace Api.Repositorios.Interfaces
 
         Task<LoginModel> InsertLogin(LoginModel login);
 
+        Task<LoginModel> Login(LoginModel login);
+
         Task<LoginModel> UpdateLogin(LoginModel login, int id);
 
         Task<bool> DeleteLogin(int id);
